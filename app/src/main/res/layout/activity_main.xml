@@ -16,13 +16,13 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:textColor="@color/Red"
+            android:textColor="@color/purple_500"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="35dp"
+            android:gravity="center_horizontal"
             android:padding="7dp"
             android:text="Seleccione una Opción" />
 

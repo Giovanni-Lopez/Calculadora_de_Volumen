@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -26,6 +27,9 @@ public class Cisterna extends AppCompatActivity {
     }
 
     public void calcularVolumenCilindro(View view){
+
+        if(validar()){
+
         String vl1String = vl1.getText().toString();
         String vl2String = vl2.getText().toString();
 
@@ -37,6 +41,26 @@ public class Cisterna extends AppCompatActivity {
         Double volumCilindro = 3.1416 * (radio * radio) * vl2Double;
         String resul = String.valueOf(formato.format(volumCilindro));
         txtRespuesta.setText(resul+" U³");
+        }
 
     } //Fin metodo calcularVolumenCilindro
+
+    public boolean validar(){
+        boolean retorno = true;
+
+        String v1 = vl1.getText().toString();
+        String v2 = vl2.getText().toString();
+
+        if (v1.isEmpty()){
+            vl1.setError("Ingrese Diametro");
+            retorno=false;
+        }
+
+        if (v2.isEmpty()){
+            vl2.setError("Ingrese Altura");
+            retorno=false;
+        }
+
+        return retorno;
+    } //Fin metodo Validar
 }
